@@ -1,0 +1,73 @@
+%% Annotated references
+\ProvidesFile{annotated.bbx}
+
+% Add extra field for annotated publications
+\DeclareDatamodelFields[type=field,datatype=literal]{mynote}
+\DeclareDatamodelFields[type=field,datatype=literal]{special}
+\DeclareDatamodelFields[type=field,datatype=literal]{outstanding}
+
+
+\DeclareBibliographyDriver*{%
+  \iffieldundef{mynote}{}{\marginnote{\hspace*{1em}}}%
+  \iffieldundef{special}{}{\marginnote{*}}%
+  \iffieldundef{outstanding}{}{\marginnote{**}}%
+  \printnames{author}:%
+  \newunit\newblock
+  \printfield{title}%
+  \newunit\newblock
+  \usebibmacro{journaltitle+year+volume+pages}%
+  \newunit\newblock
+  \printfield{mynote}
+  \finentry
+}
+
+
+\DeclareNameFormat*{author}{%
+  \ifmorenames{#1 #4%
+    \ifthenelse{\value{listcount}<\value{liststop}}%
+      {\addcomma\space}%
+      {\usebibmacro{name:andothers}%
+    }%
+  }%
+  {\ifnumgreater{\value{listcount}}{\value{liststop}-1}{%
+    \ifnumgreater{\value{listcount}}{1}{%
+      and }%
+      {}%
+  }%
+  {}%
+  #1 #4%
+  \ifthenelse{\value{listcount}<\value{liststop}}{\addcomma\space}{}%
+  }%
+}
+% No spaces between initials
+\renewcommand*{\bibinitdelim}{}
+
+
+
+% Bold article title
+\DeclareFieldFormat*{title}{\textbf{#1}}
+
+
+
+% {Journal} {year}, {volume}:{pages} 
+\newbibmacro*{journaltitle+year+volume+pages}{%
+  \printfield{journaltitle}%
+  \setunit{\space}%
+	\printfield{year},%
+	\setunit{\space}%
+	% \iffieldundef{doi}{}{\href{http://dx.doi.org/\thefield{doi}}}%
+	% \printfield{doi}%
+	\setunit{\space}%
+  \printfield{volume}:\printfield{pages}%
+}
+% Italic journal title
+\DeclareFieldFormat*{journaltitle}{\emph{#1}}
+% Bold volume number
+\DeclareFieldFormat*{volume}{\textbf{#1}}
+% Plain page numbers
+\DeclareFieldFormat*{pages}{#1}
+
+
+
+% Extra notes
+\DeclareFieldFormat*{mynote}{\iffieldequalstr{mynote}{}{}{\iffieldequalstr{mynote}{{}}{}{\newline\noindent\emph{#1}}}}

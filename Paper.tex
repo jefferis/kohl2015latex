@@ -1,0 +1,720 @@
+%% LyX 2.1.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{Minion Pro}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=1.5cm,lmargin=2cm,rmargin=2cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{color}
+\usepackage{array}
+\usepackage{prettyref}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=true,pdfborder={0 0 0},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{
+ linkcolor=blue, urlcolor=red, citecolor=blue}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newcommand{\lyxaddress}[1]{
+\par {\raggedright #1
+\vspace{1.4em}
+\noindent\par}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%%% Packages %%%
+\usepackage{graphicx}
+\usepackage{marginnote}
+
+%%% Bibliography %%%
+\usepackage[style=annotated,citestyle=numeric,terseinits=true,minbibnames=10,maxbibnames=10,sorting=none,sortcites=true,natbib=true,backend=biber]{biblatex}
+\addbibresource{/GD/LMBD/Papers/2015MolBioSense/references.bib}
+\usepackage{enumitem}
+% Margin notes on left
+\usepackage{marginnote}
+\reversemarginpar
+\newrefformat{fig}{Figure~\ref{#1}}
+\newrefformat{tab}{Table~\ref{#1}}
+\date{}
+
+\makeatother
+
+\usepackage{xunicode}
+\begin{document}
+
+\title{Pheromone processing in \emph{Drosophila}}
+
+
+\author{Johannes Kohl\textsuperscript{1,2,3}, Paavo Huoviala\textsuperscript{1}
+and Gregory S X E Jefferis\textsuperscript{1,3}}
+
+\maketitle
+
+\lyxaddress{\textsuperscript{1} Division of Neurobiology, MRC Laboratory of
+Molecular Biology, Cambridge, CB2 0QH, UK}
+
+
+\lyxaddress{\textsuperscript{2 }Department of Molecular and Cellular Biology,
+Harvard University, Cambridge, MA, USA}
+
+
+\lyxaddress{\textsuperscript{3 }Corresponding authors: Kohl, Johannes (jkohl@fas.harvard.edu),
+Jefferis, Gregory S X E (jefferis@mrc-lmb.cam.ac.uk)}
+
+
+
+
+\section*{Highlights }
+
+
+\begin{itemize}
+\item Distinct sensory systems for volatile and contact pheromone detection
+\item Identified \emph{Drosophila} pheromones and their receptors
+\item Central processing of pheromone signals
+\item Sex-specific rerouting of pheromone signals 
+\end{itemize}
+
+\section*{Graphical abstract}
+
+
+
+
+\section*{Abstract }
+
+Understanding how sensory stimuli are processed in the brain to instruct
+appropriate behavior is a fundamental question in neuroscience. \emph{Drosophila}
+has become a powerful model system to address this problem. Recent
+advances in characterizing the circuits underlying pheromone processing
+have put the field in a position to follow the transformation of these
+chemical signals all the way from the sensory periphery to decision
+making and motor output. Here we describe the latest advances, outline
+emerging principles of pheromone processing and discuss future questions. 
+
+
+\section*{Introduction}
+
+Pheromones are powerful chemosensory stimuli, released into the environment
+by individuals with the ultimate goal of altering the behavior or
+physiology of others members of their species. Since the first description
+of pheromones, tremendous advances have been made in our understanding
+of how these chemicals are detected by sensory systems. However, with
+one notable exception (see below) our understanding of how pheromones
+are processed in the brain is still relatively limited. \emph{Drosophila}
+is an attractive model system for studying the logic of pheromone
+perception since (1) pheromone-receptor pairs have been identified,
+(2) most of its \textasciitilde{}100,000 neurons are accessible to
+genetic manipulations and (3) pheromones modulate several, quantifiable
+behaviors. Since sensory pheromone detection in \emph{Drosophila}
+has been extensively reviewed elsewhere (e.g. see \citep{Sengupta2014})
+we will only briefly outline its principles before discussing recent
+advances in understanding pheromone processing deeper in the fly brain
+(i.e. perception). Finally, we will address sex differences in pheromone
+processing and outline future challenges. Although putative larval
+pheromones have recently been described \citep{Farine:2014ve,Mast:2014aa},
+this review will focus on pheromone processing in the adult fly.
+
+
+\subsection*{Pheromone detection in \emph{Drosophila}}
+
+Pheromone-sensitive cells in \emph{Drosophila} are incorporated into
+the chemosensory systems of smell and taste. Flies, like most insects,
+have distinct anatomical subsystems for detection of volatile (long-range)
+and non-volatile (contact) chemicals: olfactory receptor neurons (ORNs)
+on head appendages and gustatory receptor neurons (GRNs) on various
+body parts \citep{Stocker:1994fu,Montell:2009fk}. 
+
+Odors are detected by odorant receptor (OR) or ionotropic receptor
+(IR) -expressing ORNs housed in sensory bristles (sensilla) on the
+third antennal segment and maxillary palps \citep{Vosshall:2007nx,Benton:2009ly}.
+On each antenna, \textasciitilde{}45 classes of ORNs \citep{Vosshall:2007nx}
+are arranged as clusters of 1--4 neurons in four morphologically distinct
+classes of sensilla (basiconic, coeloconic, intermediate and trichoid).
+Intriguingly, only trichoid ORNs seem to be responsive to fly odors
+\citep{Goes-van-Naters:2007dq}. Axons from 20--50 ORNs (i.e. first-order
+olfactory neurons) expressing the same OR / IR converge on each of
+\textasciitilde{}50 glomeruli in the antennal lobe (AL), the first
+relay station for olfactory information. There they form synapses
+with 1--7 excitatory or inhibitory projection neurons (PNs, second-order
+olfatory neurons) and a complex network of excitatory and inhibitory
+local neurons (LNs) \citep{Olsen:2007dz,Shang:2007vn,Chou:2010uq}.
+PNs then relay the olfactory information to two distinct higher brain
+centers, the mushroom body (MB, required for olfactory learning) and
+the lateral horn (LH) \citep{Jefferis:2007zr}. 
+
+In contrast, non-volatile chemicals are detected via taste sensilla
+on the labellum, pharynx, legs, wing margins and ovipositor \citep{Stocker:1994fu,Montell:2009fk,Liman:2014bs}.
+Most sensilla contain four GRNs that express one of either \textasciitilde{}60
+gustatory receptor (GR) or \textasciitilde{}35 IR genes conferring
+sensitivity to sweet, bitter, salt, water, fatty acids or carbonation
+\citep{Amrein:2005uq,Scott:2005kx,Thistle:2012fu,Koh:2014cr}. Several
+of these GRs and IRs are candidate pheromone receptors; all are housed
+in labellar or tarsal taste sensilla. GRNs project to the gnathal
+ganglion (GNG, formerly the subesophageal ganglion), the putative
+first-order processing center for gustatory information and to specific
+thoracic ganglia in the ventral nerve cord. In the GNG, their projections
+are reported to segregate by gustatory organ and taste category, but
+not by receptor, as is the case for ORNs \citep{Wang:2004qo}. 
+
+
+\subsection*{\emph{Drosophila} pheromonal stimuli and their receptors}
+
+
+
+While the tuning of most \emph{Drosophila} ORs, IRs and many GRs \citep{Hallem:2006bs,Montell:2009fk}
+has been investigated using a wide range of stimuli, barely any pheromone
+receptor-ligand pairs have been identified. A handful of trichoid
+ORs were found to respond to volatile compounds in fly extracts \citep{Goes-van-Naters:2007dq},
+but the chemical identity of the ligands remains unknown, with one
+exception: 11-\emph{cis}-vaccenyl acetate (cVA), produced in the male
+ejaculatory bulb and transferred to females during copulation, is
+detected by two narrowly tuned ORs in both sexes, OR67d and OR65a
+\citep{Ha:2006qa,Kurtovic:2007fu,Goes-van-Naters:2007dq}. Similarly,
+only a small number of pheromone-responsive GRs has been identified.
+They are likely activated by cuticular hydrocarbons (CHCs) \citep{Ferveur:2005ly},
+long-chain fatty acids which are produced by oenocytes, specialized
+cells located on the inner surface of the abdominal cuticle \citep{Billeter:2009qf}.
+Some of these CHCs have been shown to be volatile \citep{Farine:2012bh},
+suggesting that they might be detected through olfaction as well as
+taste. CHCs are an essential sensory component for courtship \citep{Billeter:2009qf}
+and courtship-inhibiting CHCs are present on both males and females.
+At least three of these courtship-inhibiting CHCs, 7-T, 9-T and 11-P
+\citep{Ferveur:2005ly}, which are secreted by conspecific males or
+flies of other species, are detected by Gr32a \citep{Miyamoto:2008kl,Fan:2013fv}
+(and probably Gr33a \citep{Moon:2009qa}). Intriguingly, both Gr32a
+and Gr33a are also required for detection of bitter-tasting compounds
+\citep{Moon:2009qa}, suggesting that reproductive dead ends have
+aversive valence \citep{Lacaille:2007ij}. Another receptor, Gr68a,
+which is expressed in chemosensory neurons of \textasciitilde{}20
+male-specific gustatory bristles in the forelegs, was proposed to
+detect female contact pheromones \citep{Bray:2003fk}, although this
+finding has been called into question \citep{Ejima:2007bs,Toda:2012ff}.
+Of these putative female CHC aphrodisiacs, two have been identified,
+7,11-HD and 7,11-ND \citep{Ferveur:2005ly}, but their receptors remain
+unknown. Two potential candidates are IR52c and IR52d, which are co-expressed
+in male-specific foreleg sensilla and activated by female stimuli
+\citep{Koh:2014cr}. Surprisingly, 7,11-HD acts both as an attractant
+for conspecific males and as a powerful anti-aphrodisiac for males
+of other \emph{Drosophilids} \citep{Billeter:2009qf}, illustrating
+that contact pheromones can serve as species barriers. A separate
+population of GRNs, expressing \emph{ppk25}, \emph{ppk23} and \emph{ppk29},
+members of the pickpocket/degenerin-epithelial (Ppk/DEG-ENaC) family
+of sodium channels, was found to be necessary for detection of contact
+pheromones involved in male courtship behavior \citep{Lin:2005pi,Toda:2012ff,Thistle:2012fu,Starostina:2012mi,Liu:2012ys,Vijayan:2014vn}.
+\emph{ppk23} marks a subset of paired neurons in male-specific chemosensory
+leg bristles. One of these neurons responds to male pheromones (7-T,
+cVA), whereas the other one, characterized by \emph{ppk25} co-expression,
+responds to female pheromones (7,11-ND, 7,11-HD) \citep{Lin:2005pi,Thistle:2012fu,Starostina:2012mi,Toda:2012ff,Vijayan:2014vn}.
+Interestingly, these \emph{ppk} neurons express neither Gr32a nor
+Gr68a \citep{Thistle:2012fu}. A picture emerges therefore in which
+parallel, but functionally complementary systems exist for contact
+pheromone detection in \emph{Drosophila}. 
+
+
+\subsection*{Central circuits for pheromone perception }
+
+Olfactory information carried by PNs converges, apparently randomly,
+onto third-order neurons in the MB (Kenyon Cells) \citep{Caron:2013vn}
+which integrate inputs from different glomeruli linearly or sublinearly
+\citep{Gruntman:2013vn}. This probabilistic wiring is thought to
+reflect the MB's role in learning and memory. In contrast, third-order
+lateral horn neurons (LHNs) exhibit stereotyped connectivity and odor
+responses \citep{Liang:2013nx,Kohl:2013kx,Fisek:2014uq}, in accordance
+with the LH's hypothesized role in mediating innate olfactory behaviors.
+Since most ORNs are broadly tuned, odorant identity is presumably
+encoded by combinatorial activity of ORN -> PN ensembles. While this
+distributive model is appropriate for general odor coding (but see
+Mansourian \& Stensmyr {[}this issue{]} for a discussion of combinatorial
+coding under natural odor concentrations), the only identified olfactory
+pheromone, cVA, seems be initially processed by a \emph{labeled line}
+instead, i.e. a neural circuit dedicated to a specific sensory stimulus. 
+
+Following the cVA signal into the brain has given us unique insights
+into the logic of pheromone perception. The tuning of first-, second-
+and some third-order olfactory neurons to cVA is extremely narrow
+\citep{Schlief:2007fk,Datta:2008dz,Ruta:2010ys,Kohl:2013kx}\emph{
+}and\emph{ }all components of this circuit express male-specific transcripts
+of \emph{fruitless} \citep{Kurtovic:2007fu,Datta:2008dz,Ruta:2010ys,Cachero:2010vn},
+a transcription factor thought to instruct the formation of neural
+circuits underlying male courtship behavior \citep{Stockinger:2005tg}.
+Several features distinguish pheromone processing from that of general
+odors: cVA (as well as volatile fly extracts) elicits relatively weak
+responses in ORNs \citep{Goes-van-Naters:2007dq}, a potential consequence
+of its relatively low volatility. However, these weak responses are
+strongly amplified in postsynaptic DA1 PNs \citep{Schlief:2007fk}
+(of which there are 6--8, the highest reported for any glomerulus).
+In addition, \citet{Chou:2010uq} found that the innervation density
+of some LNs was significantly lower in the pheromone-processing glomeruli
+DA1, DL3 and VA1d, and that these ``pheromone-avoiding'' LNs fired
+a significantly higher percentage of their spikes during the first
+100 ms of the odor response as compared to all other LNs. Apart from
+cholinergic PNs mediating excitatory, feedforward transmission, five
+classes of GABAergic, inhibitory PNs (iPNs) have been identified,
+three of which target the \emph{fru+} glomeruli DA1, VL2a and VA1lm
+\citep{Jefferis:2007zr}. While these iPNs potently inhibit LHN responses
+to food odors, responses to phero- and kairomonal stimuli (via DA1
+and VL2a) are iPN-independent \citep{Liang:2013nx}. Interestingly,
+\citet{Hong:2015uq} recently found that ORNs vary dramatically in
+their sensitivity to inhibitory LN activation in the AL and that DA1
+is particularly sensitive to this presynaptic inhibition \citep{Hong:2015uq}.
+Therefore, different types of inhibition within pheromone-processing
+circuits might operate according to different rules. 
+
+Taken together, these circuit characteristics (signal amplification,
+numerical robustness, exemption from some types of inhibition) might
+ensure high-fidelity transmission of pheromone information even in
+the presence of other olfactory stimuli. However, since cVA is the
+only identified volatile pheromone in \emph{Drosophila}, it remains
+unclear whether these findings can be generalized.
+
+Even less is known about central processing of contact pheromones
+(or any gustatory stimuli) in flies. As mentioned, GRNs projections
+in the GNG roughly segregate by organ location and taste category
+\citep{Wang:2004qo}. Indeed even though individual GRNs can detect
+multiple taste qualities, these tend to have the same valence \citep{Liman:2014bs}.
+Therefore, taste in \emph{Drosophila} seems to be a ``valence labeled
+line'' modality \citep{Liman:2014bs}. \citet{Kain:2015fk} recently
+identified sweet-responsive gustatory PNs downstream of labellar \emph{Gr5a}
+GRNs and traced their axonal projections to the antennal mechanosensory
+and motor center (AMMC) \citep{Kain:2015fk}. However, since this
+represents the only known class of of second-order gustatory neurons
+so far, it is unclear whether the 'valence labeled line' organization
+is preserved in higher brain centers. 
+
+
+\subsection*{Integration of pheromone signals}
+
+Why do flies use such a wide variety of receptors and structures to
+detect pheromone stimuli that may have similar meaning? Male courtship,
+a complex sequence of behaviors (\prettyref{fig:courtship}a), is
+uniquely suited to explore this question, since detection of both
+volatile and contact pheromones has been shown to coordinate this
+elaborate ritual, together with visual, auditory and mechanosensory
+cues \citep{Pavlou:2013uq}.
+
+Chemical cues vary widely in their volatility and the same cue may
+be detected by different sensory modalities at different ranges. Thus
+pheromones may be used to signal not just valence, but also reflect
+target distance, potentially acting sequentially to trigger the appropriate
+steps of courtship behavior. Initially, cVA in conjunction with food
+odors could act as a long- or medium-range aggregation pheromone to
+attract flies of both sexes (\prettyref{fig:courtship}a) \citep{Bartelt:1985bh,Schlief:2007fk,Grosjean:2011fu}
+to food substrates suitable for mating. At closer range, and while
+interacting with other flies in a group, rapidly changing concentrations
+of cVA and other sex-specific volatile pheromones (as well as visual
+cues) could inform the selection of appropriate courtship targets
+(i.e. virgin females) worthy of following. Subsequently, detection
+of CHCs via direct contact (tapping) might represent a check point
+for deciding between continuation of courtship, i.e. singing, licking
+(female of correct species), fighting (male of correct species) or
+withdrawal (incorrect species). Finally, if a decision to continue
+with courtship is made, detection of secreted female pheromones via
+labellar receptors (licking) and auditory cues could gate the final
+step of the ritual, copulation. Although simplistic, this working
+model of the behavioral algorithm governing courtship behavior makes
+testable predictions: 
+
+(a) food and pheromone odors are integrated in the brain and (b) neural
+representations of volatile and contact pheromones interact, with
+perception of long-range signals possibly gating subsequent perception
+of short-range signals, either by modifying approach behavior or directly
+at the neural circuit level. 
+
+Some evidence exists in support of the first prediction, i.e. interactions
+between the neural representations of volatile food and pheromone
+stimuli. While PNs tuned to general odors target dorsal regions of
+the LH, PNs downstream of pheromone-responsive trichoid ORNs (DA1,
+VL2a, VA1lm, DL3) project to the anterioventral LH \citep{Jefferis:2007zr,Grosjean:2011fu}.
+This observation suggests that a spatially segregated representation
+of pheromones persists from the AL to the LH \citep{Jefferis:2007zr},
+but a few non-pheromonal chemicals that mediate innate attraction
+or aversion are also detected by second-order neurons that project
+to the vLH: farnesol (Or83c/DC3), geosmin (Or56a, DA2), PAA/PA (Ir84a,
+VL2a) (\prettyref{tab:pheromones-receptors}) and valencene (Or19a,
+DC1). Since processing of these odors stimuli shares several characteristics
+with pheromone processing (innate valence, narrowly tuned PNs with
+vLH projections), they can be described as \emph{kairomones}, i.e.
+chemicals emitted by an organism, which attract exploiters of another
+species. Indeed, co-processing of pheromonal (e.g. cVA) and such kairomonal
+(e.g. PAA) stimuli has been suggested to serve the coordination of
+feeding and oviposition site selection with reproductive behaviors
+\citep{Grosjean:2011fu}. This is supported by the observations that
+cVA acts as an aggregation pheromone only in presence of attractive
+food odors \citep{Bartelt:1985bh,Schlief:2007fk} and that the food
+odor PAA is only attractive when presented with fly odors \citep{Grosjean:2011fu}.
+The site of convergence of pheromonal and kairomonal signals with
+similar biological value might be found in third-order LHNs with dendrites
+in the vLH that integrate signals from both channels. As a consequence
+of such interactions, the labeled line model is probably only valid
+for the initial stages of pheromone processing. 
+
+The second prediction is that crosstalk between olfactory and contact
+pheromone signals exists. This notion is backed, amongst others, by
+the observations that Gr32a is required for the aggression-promoting
+effect of cVA \citep{Wang:2011hc}, that 7,11-HD mitigates the deterrent
+effects of cVA \citep{Billeter:2009qf} and that increased courtship
+caused by male CHC ablation is suppressed by a mutation in Or47b \citep{Wang:2011hc}.
+Furthermore, since cVA is detected by both olfactory and contact chemosensory
+neurons \citep{Ha:2006qa,Kurtovic:2007fu,Goes-van-Naters:2007dq,Thistle:2012fu}
+(\prettyref{tab:pheromones-receptors}) -- interactions between both
+pheromone processing circuits are likely. This interaction probably
+does not occur between GRNs and central olfactory neurons, since neither
+DA1 PNs nor identified cVA-responsive LHNs project to the GNG. However,
+Gr32a neurons are anatomically poised to relay pheromone information
+to sexually dimorphic \emph{fru+} neurons in the GNG \citep{Koganezawa:2010tg}
+and the ventrolateral protocerebrum \citep{Miyamoto:2008kl}, which
+in turn could connect to the \emph{fru+} cVA olfactory circuit. 
+
+
+
+
+\subsection*{Sexually dimorphic and state-dependent pheromone perception}
+
+How can a single pheromone, cVA, elicit aggression and male-male repulsion
+in males \citep{Kurtovic:2007fu,Wang:2010kl,Liu:2011dq}, increase
+receptivity in females \citep{Kurtovic:2007fu} and act as aggregation
+signal in both sexes \citep{Bartelt:1985bh} (\prettyref{fig:Questions})?
+Numerous differences exist between male and female fly brains, most
+controlled by \emph{fruitless} \citep{Cachero:2010vn} and \emph{doublesex}
+\citep{Rideout:2010dq}. Many of these differences are associated
+with sensory processing pathways \citep{Cachero:2010vn}. Males have
+a higher number of trichoid sensilla \citep{Stocker:1994fu} and three
+enlarged glomeruli, DA1, VA1v and VL2a, all of which express \emph{fru+}
+\citep{Stockinger:2005tg}. Deeper in the brain, DA1 PN axons show
+a male-specific ventral arborization \citep{Datta:2008dz}, but it
+remains unclear if this has functional consequences. Surprisingly,
+cVA responses in first- and second-order olfactory neurons are non-dimorphic
+\citep{Kurtovic:2007fu,Goes-van-Naters:2007dq,Datta:2008dz}, but
+the dendrites of two groups of \emph{fru+} third-order olfactory neurons
+sex-specifically overlap with DA1 PN axon terminals, thereby forming
+a bidirectional circuit switch that reroutes the cVA signal between
+males and females \citep{Kohl:2013kx}. Intriguingly, the position
+of this switch is controlled by \emph{fruitless} acting cell-autonomously
+in third-order neurons \citep{Kohl:2013kx}. Since only one candidate
+fourth-order neuron has been identified so far, the male specific
+\emph{fru+} DN1 neuron which projects to the VNC \citep{Ruta:2010ys},
+it will now be critical to study how cVA processing after this circuit
+bifurcation instructs distinct behaviors. The circuit switch provides
+a simple conceptual explanation of how the same sensory stimulus can
+elicit sex-specific behaviors, but it does not address (1) how cVA
+can act as both repellent and aggregation signal in males and (2)
+why prolonged cVA exposure leads to response inhibition in both sexes
+\citep{Ejima:2007bs,Liu:2011dq}. As mentioned above, cVA is processed
+by two parallel channels \citep{Ha:2006qa,Kurtovic:2007fu,Goes-van-Naters:2007dq}.
+While elevated aggression and male-male repulsion are presumably mediated
+via acute perception of cVA through the high-affinity Or67d->DA1 channel
+\citep{Kurtovic:2007fu,Wang:2010kl}, chronic cVA exposure might recruit
+the low-affinity Or65a->DL3 channel and suppress aggression by lateral
+inhibition of DA1 in the AL \citep{Ejima:2007bs,Liu:2011dq}. Activation
+of Or65a->DL3 (neither of which express \emph{fru}) might therefore
+mediate the non-dimorphic aggregation effect of cVA. Lateral inhibition
+of DA1 by DL3 might also to be responsible for the abolished attraction
+of females to cVA after prolonged exposure \citep{Lebreton:2014cr},
+but this interglomerular interaction remains to be directly tested.
+Also, in the absence of functional recordings from DL3 PNs or their
+postsynaptic neurons, it remains unclear whether additional interactions
+exist between both cVA processing channels. Since DL3 PNs project
+to the vLH, there are likely to be third-order neurons postsynaptic
+to both DA1 and DL3 PNs. 
+
+Sex differences in neuron number and morphology have also been identified
+in contact chemoreceptive structures (\prettyref{tab:pheromones-receptors})
+\citep{Bray:2003fk,Thistle:2012fu} -- and these dimorphisms are also
+controlled by either\emph{ fruitless} or \emph{doublesex}. 
+
+Since the \emph{fru} isoforms sculpting these circuits are male-specific,
+female circuits remain drastically understudied. Since female-enlarged
+brain regions have been reported \citep{Cachero:2010vn}, it will
+be valuable to search for female-specific or -enriched transcripts
+which could provide a genetic entry point for studying female fly
+behaviors.
+
+Finally, recent work from \citet{Keleman:2012dz} has illustrated
+that social experience can modulate hard-wired, pheromone-driven behaviors.
+Females decrease their receptivity after mating, one of several profound
+physiological changes mediated by transfer of sex peptide (SP) during
+copulation \citep{Yapici:2008ve}. Since males also transfer cVA onto
+females during mating, this signal allows them to selectively court
+appropriate (i.e. receptive) targets. \citet{Keleman:2012dz} observed
+that courtship rejection drastically enhances the behavioral sensitivity
+of males to cVA and identified a group of \emph{fru+} dopaminergic
+neurons that might convey a rejection signal to the MB, thereby producing
+lasting changes in cVA processing \citep{Keleman:2012dz}.
+
+
+\subsection*{Conclusions and future directions}
+
+In recent years, substantial progress has been made in understanding
+\emph{Drosophila} pheromone processing, but several fundamental questions
+remain (\prettyref{fig:Questions}). At the sensory periphery, the
+most obvious frontier is the identification of monomolecular pheromone
+\textbf{\emph{ligands}} and their \textbf{\emph{receptors}}. Although
+several ORN and GRN populations were identified that are responsive
+to complex fly odors and cuticular extracts, respectively, the active
+compounds remain unknown. Importantly, the CHCs discovered so far
+represent only a small fraction of the complete cuticular profile
+of \emph{Drosophila} \citep{Ferveur:2005ly,Everaerts:2010zr}. Only
+recently, a novel acetylated hydrocarbon, CH503, was identified which,
+like cVA, is transferred from males to females during mating and subsequently
+acts as a long-lived inhibitor of male courtship \citep{Yew:2009fv}.
+Approaches such as gas-chromatography-linked single-sensillum recordings
+\citep{Stensmyr:2012cr} could be used to address these questions.
+
+Deeper in the brain, most of our current knowledge about \textbf{\emph{pheromone
+perception }}stems from following the cVA signal along a circuit hardwired
+by \emph{fruitless}. It remains open whether additional labeled lines
+exist for other volatile or contact pheromones (\prettyref{fig:Questions}).
+Identification of corresponding genetic \textbf{\emph{markers}} would
+allow us to investigate whether the circuit architecture underlying
+cVA processing can be generalized to other pheromones. Our understanding
+of contact pheromone processing faces an additional hurdle: we are
+only beginning to uncover the identity of second-order gustatory neurons.
+This is also the limiting factor for understanding how gustatory and
+olfactory (pheromone) signals might be integrated. However, with the
+availability of brain-wide neuron atlases and an ever-expanding palette
+of driver lines, these questions can certainly be addressed in the
+near future. We are therefore confident that \emph{Drosophila} will
+remain an invaluable model system for studying the neural circuit
+logic of pheromone perception and, more generally, chemosensory processing.
+
+
+\section*{}
+
+
+\section*{Conflict of interest statement}
+
+Nothing declared.
+
+
+\section*{Acknowledgements}
+
+We thank J-C Billeter, S. Frechter, D. Mersch, M. Stensmyr and T.
+Wyatt for helpful comments on the manuscript, L. Hillier for help
+in graphical design of figure 1, and M. Sokolowski for allowing adapting
+parts of figure 1 from her review. We apologize to colleagues whose
+work could not be cited here due to space constraints. This work was
+supported by a European Research Council Starting Investigator grant,
+the European Molecular Biology Organization (EMBO) Young Investigator
+Programme, and Medical Research Council (MRC) Grant MC-U105188491
+(to G.S.X.E.J.); and MRC Laboratory of Molecular Biology Graduate
+Scholarships (to J.K. and P.H.).
+
+
+\section*{References and recommended reading}
+
+On {[}2{]}:By using a combination of behavioral experiments and gas
+chromatography-mass spectrometry this interesting study identifies
+larval and adult chemicals that possibly act as pheromonal cues guiding
+aggregation and dispersal behavior in the larvae of two Drosophila
+species.
+
+On {[}56{]}: This study describes the neural and molecular mechanisms
+underlying courtship learning. The authors show that a specific class
+of dopaminergic neurons together with the mushroom body are responsible
+for the experience-dependent decrease in courtship towards non-virgin
+female targets.
+
+On {[}62{]}: By using genetic mosaics the authors manage to localize
+the neural basis of male courtship behavior to two groups of fruitless-expressing
+neurons, which are also currently prime candidates for putative integration
+sites for multimodal pheromonal information. They also develop a novel
+method of studying male courtship behaviour by using tethered males,
+allowing for simultaneous in vivo recordings. Interestingly, the study
+also shows that tarsal contact with a target female is enough to trigger
+initial, but not late, stages of courtship. Overall, the paper takes
+a significant step forward towards understanding the neural circuitry
+of pheromone processing and pheromone guided behavior.
+
+Papers of particular interest, published within the period of review,
+have been highlighted as:
+
+• of special interest
+
+•• of outstanding interest
+
+
+
+\newlist{biblist}{enumerate}{1}%
+\setlist[biblist]{label={[\arabic*]}}%
+\defbibenvironment{bibliography}
+{\biblist{}
+{\setlength{\leftmargin}{\bibhang}%
+\setlength{\itemindent}{-\leftmargin}%
+\setlength{\itemsep}{\bibitemsep}%
+\setlength{\parsep}{\bibparsep}}}
+{\endenumerate}
+{\item}
+\printbibliography
+
+
+\section*{Figure Legends}
+
+
+\subsection*{Table 1 \emph{Drosophila} pheromonal stimuli and their receptors}
+
+\textcolor{black}{\footnotesize{}M, male, F, female, PAA, phenylacetic
+acid, PA, phenylacetaldehyde, }{\footnotesize{}7-T, (z)-7-tricosene,
+7-P, 7-pentacosene, 9-T, z-9-tricosene, 11-P, z-11-pentacosene, 7,11-HD,
+(7Z,11Z)-heptacosadiene, 7,11-ND, (7Z,11Z)-nonacosadiene,}\textcolor{black}{\footnotesize{}
+SP, sex peptide, }\textcolor{blue}{\emph{\footnotesize{}fru+}}\textcolor{black}{\footnotesize{},\textsuperscript{\textcolor{black}{\footnotesize{}1}}
+unclear whether }\textcolor{black}{\emph{\footnotesize{}ppk29}}\textcolor{black}{\footnotesize{}
+neurons co-express }\textcolor{black}{\emph{\footnotesize{}fru}}\textcolor{black}{\footnotesize{},
+}\textsuperscript{2}\textcolor{black}{\footnotesize{}i.e. directly
+acting on target tissue, \textsuperscript{\textcolor{black}{\footnotesize{}3}}
+detected by }\textcolor{black}{\emph{\footnotesize{}ppk23+}}\textcolor{black}{\footnotesize{}
+neurons \citep{Toda:2012ff}, \textsuperscript{\textcolor{black}{\footnotesize{}4}}cVA
+acts as an aggregation pheromone only in conjunction with food odors
+(see \citep{Bartelt:1985bh}), }\textsuperscript{5}\textcolor{black}{\footnotesize{}Gr32a
+(but not Gr33a) required for inhibition of interspecies courtship
+\citep{Fan:2013fv}.}{\footnotesize \par}
+
+
+\subsection*{Figure 1 Pheromone perception in Drosophila courtship}
+
+\textbf{\footnotesize{}(a)}{\footnotesize{} Proposed model for how
+pheromonal cues guide male behavior at different spatial ranges. Note
+that neuron names are color-coded to match the illustrations in }\textbf{\footnotesize{}(b)}{\footnotesize{}
+and }\textbf{\footnotesize{}(c)}{\footnotesize{}.}{\footnotesize \par}
+
+\noindent \textbf{\footnotesize{}(b)}{\footnotesize{} Hypothetical
+wiring diagram from chemosensory inputs to descending motor output.
+Darker arrows suggest strong experimental evidence for synaptic connections
+and the direction of information flow, whereas lighter arrows suggest
+probable connections based on neuroanatomical data, i.e. physical
+overlap (see }\textbf{\footnotesize{}(c)}{\footnotesize{}). The putative
+connection from mAL to pMP4/P1 may be inhibitory\citep{Fan:2013fv},
+suggesting that the wiring diagram above is incomplete, as pMP4/P1
+neurons must get excitatory input from somewhere else.}{\footnotesize \par}
+
+\noindent \textbf{\footnotesize{}(c)}{\footnotesize{} 3D renderings
+of neurons involved in pheromone processing (left), sensory integration
+(middle), and motor control (right). Black arrowheads illustrate sensory
+input (left) or motor output (right), respectively. }{\footnotesize \par}
+
+\noindent {\footnotesize{}Fly cartoon images adapted with permission
+from Sokolowski, Nature Reviews Genetics 2:879-890 (2001).}{\footnotesize \par}
+
+\nocite{philipsborn2011,Kohatsu:2011aa}
+
+
+\subsection*{Box 1 Open questions in \emph{Drosophila} pheromone processing}
+
+
+\section*{Figures}
+
+\begin{table}
+\protect\caption{\textbf{\label{tab:pheromones-receptors}}}
+
+
+\begin{tabular*}{0.85\paperwidth}{@{\extracolsep{\fill}}|>{\raggedright}p{0.07\paperwidth}|>{\centering}p{0.04\paperwidth}|>{\centering}p{0.06\paperwidth}|>{\centering}p{0.06\paperwidth}|>{\centering}p{0.03\paperwidth}|>{\centering}p{0.12\paperwidth}|>{\centering}p{0.2\paperwidth}|>{\centering}p{0.07\paperwidth}|}
+\hline 
+\textbf{Pheromone} & \textbf{Range} & \textbf{emitter -> detector} & \textbf{Receptor} & \textbf{PN} & \textbf{Behavior} & \textbf{Comments} & \textbf{References}\tabularnewline
+\hline 
+\hline 
+\multirow{5}{0.07\paperwidth}{cVA} & \multirow{5}{0.04\paperwidth}{volatile \& contact} & M -> M & \textcolor{blue}{Or67d} & \textcolor{blue}{DA1} & aggression & suppressed by chronic cVA via Or65a & \citep{Wang:2010kl,Ejima:2007bs,Liu:2011dq}\tabularnewline
+\cline{3-8} 
+ &  & F -> M & \textcolor{blue}{Or67d} & \textcolor{blue}{DA1} & male repulsion & transferred to female by prior mating & \citep{Kurtovic:2007fu}\tabularnewline
+\cline{3-8} 
+ &  & M -> F & \textcolor{blue}{Or67d} & \textcolor{blue}{DA1} & female receptivity & suppressed by chronic cVA via Or65a & \citep{Kurtovic:2007fu,Lebreton:2014cr}\tabularnewline
+\cline{3-8} 
+ &  & M/F -> M/F & Or65a (?) & DL3 (?) & aggregation\textsuperscript{4} &  & \citep{Bartelt:1985bh}\tabularnewline
+\cline{3-8} 
+ &  & M -> M & \textcolor{blue}{\emph{ppk23}}\textcolor{blue}{/}\textcolor{blue}{\emph{ppk29}}\textsuperscript{1} & n/a & male-male repulsion & \emph{ppk} channels pheromone receptors ? & \citep{Thistle:2012fu}\tabularnewline
+\hline 
+\multirow{3}{0.07\paperwidth}{7-T} & \multirow{3}{0.04\paperwidth}{contact} & M -> F & Gr32a & n/a & female receptivity & increases female receptivity & \citep{Grillet:2006tg}\tabularnewline
+\cline{3-8} 
+ &  & M -> M & Gr32a (Gr66a) & n/a & male-male / interspecies repulsion &  & \citep{Fan:2013fv,Lacaille:2007ij}\tabularnewline
+\cline{3-8} 
+ &  & M -> M & \textcolor{blue}{\emph{ppk23}}\textcolor{blue}{/}\textcolor{blue}{\emph{ppk29}}\textsuperscript{1} & n/a & male-male repulsion & \emph{ppk} channels pheromone receptors ? & \citep{Toda:2012ff,Starostina:2012mi,Liu:2012ys,Thistle:2012fu}\tabularnewline
+\hline 
+7-P & contact & M -> F & ? & n/a & female receptivity (?) & male-enriched & \citep{Ferveur:2005ly,Yew:2009fv}\tabularnewline
+\hline 
+7,11-HD (7,11-ND)\textsuperscript{3} & contact & F -> M & \textcolor{blue}{\emph{ppk23}}\textcolor{blue}{/}\textcolor{blue}{\emph{ppk29}}\textcolor{blue}{/}
+
+\textcolor{blue}{\emph{ppk25}}\textcolor{blue}{/}\textcolor{blue}{\emph{nope}}\textsuperscript{1} & n/a & male courtship & \emph{ppk} channels pheromone receptors ? & \citep{Toda:2012ff,Starostina:2012mi,Liu:2012ys,Thistle:2012fu}\tabularnewline
+\hline 
+9-P & contact & F -> M & ? & n/a & male copulation & role in courtship conditioning & \citep{Siwicki:2005kl}\tabularnewline
+\hline 
+\hline 
+CH503 & contact (?) & F -> M & ? & ? & male repulsion & transferred to female by prior mating & \citep{Yew:2009fv}\tabularnewline
+\hline 
+\hline 
+9-T, 11-P & contact & M -> M & Gr32a / Gr33a\textsuperscript{5} & n/a & male-male / inter- species repulsion & no cVA-mediated aggression in Gr32a -/- males; contact \emph{fru+}
+neurons in GNG & \citep{Svetec:2005kl,Lacaille:2007ij,Miyamoto:2008kl,Moon:2009qa,Koganezawa:2010tg,Fan:2013fv}\tabularnewline
+\hline 
+\hline 
+PAA, PA & volatile & food -> M & \textcolor{blue}{Ir84a} & \textcolor{blue}{VL2a} & male courtship & kairomone aphrodisiac & \citep{Grosjean:2011fu}\tabularnewline
+\hline 
+\hline 
+SP & contact & M -> F & \textcolor{blue}{SPR} & n/a & postmating response & allohormone pheromone\textsuperscript{2}, transferred with seminal
+fluid & \citep{Yapici:2008ve}\tabularnewline
+\hline 
+\hline 
+M/F extract & contact & ? & \textcolor{blue}{Or47b} & \textcolor{blue}{VA1v} & ? & active compound(s) unidentified & \citep{Goes-van-Naters:2007dq}\tabularnewline
+\hline 
+\hline 
+M/F extract & contact & ? & \textcolor{blue}{Or88a} & \textcolor{blue}{VA1d} & ? & active compound(s) unidentified & \citep{Goes-van-Naters:2007dq}\tabularnewline
+\hline 
+? & contact & F -> M & Gr68a & n/a & male courtship & stimulate male courtship, \emph{doublesex}-dependent & \citep{Bray:2003fk}\tabularnewline
+\hline 
+? & contact & F -> M & Gr39a & n/a & male courtship & role in sustaining male courtship behavior & \citep{Watanabe:2011hc}\tabularnewline
+\hline 
+? & contact & F -> M & IR52c / IR52d & n/a & male courtship & presumably contact \emph{fru+} neurons in prothoracic ganglia & \citep{Koh:2014cr}\tabularnewline
+\hline 
+\end{tabular*}
+\end{table}
+
+
+\newpage{}
+
+\begin{figure}
+\protect\caption{\textbf{\label{fig:courtship}}}
+
+
+%\includegraphics[width=0.8\paperwidth]{figures/FlyCourtshipModel}
+\end{figure}
+
+
+\newpage{}
+
+\begin{figure}
+\protect\caption{\textbf{\label{fig:Questions}}}
+
+\begin{itemize}
+\item What similarities and differences are there in processing non-pheromone
+odors, especially those that have strong intrinsic valence?
+\item How can we explain the different roles of cVA (i.e. courtship vs aggression
+vs aggregation)?
+\item What are the ligands for OR47b?
+\item What is the role of PAA/PA detection by IR84a in females?\textcolor{blue}{{}
+\citep{Grosjean:2011fu}}
+\item What is the identity and tuning of second-order gustatory neurons? 
+\item What is the role of \emph{ppk23+, ppk25+, ppk29+} neurons in females?
+\item Where and how (i.e. sublinear/linear/supralinear) does integration
+of pheromone signals take place (e.g. see \citep{Gruntman:2013vn})?
+\item Are cVA signals from tarsal \emph{ppk+} neurons and higher olfactory
+neurons integrated?
+\item Does \emph{fruitless} specify a dedicated circuit for pheromone perception?
+\item Are there other labeled lines? If yes, how many are there and which
+genes specify them developmentally?
+\item How plastic is pheromone processing and what mechanisms exist (e.g.
+receptor desensitization, plasticity of central circuits)
+\item Where and how do circuits for innate (or: pheromone-driven) and learned
+behaviors interact? (e.g. see \citep{Keleman:2012dz})
+\item How do courtship promoting and inhibiting pheromonal cues interact
+to guide different stages of courtship behavior?\end{itemize}
+\end{figure}
+
+\end{document}
