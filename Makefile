@@ -17,7 +17,7 @@ all: Paper.pdf
 # missing file reference and interactively asking you for an alternative.
 
 Paper.pdf: Paper.tex
-	latexmk -pdf -pdflatex="xelatex -interactive=nonstopmode" -use-make Paper.tex
+	latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make Paper.tex
 
 clean:
 	latexmk -CA
